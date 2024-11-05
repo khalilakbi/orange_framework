@@ -1,7 +1,6 @@
 package system;
 
 import base.Base;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import pages.AccountPage;
 import pages.HomePage;

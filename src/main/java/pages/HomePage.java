@@ -2,6 +2,7 @@ package pages;
 
 
 import base.Base;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,22 +30,24 @@ public class HomePage extends Base {
     // methods actions that we perform in the web app
 
     public void enterUserName(String username) {
-        typeText(inputUsername,username);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.name("username")));
+        typeText(inputUsername, username);
     }
 
     public void enterPassword(String password) {
-        typeText(inputPassword,password);
+        typeText(inputPassword, password);
     }
 
     public void clickOnLogin() {
-        clickOnElement(inputUsername);
+        clickOnElement(loginButton);
     }
 
     public boolean isRequiredMSGDisplay() {
         wait.until(ExpectedConditions.visibilityOf(requiredMSG));
         return requiredMSG.isDisplayed();
     }
-    public void doLogin(String username,String password){
+
+    public void doLogin(String username, String password) {
         enterUserName(username);
         enterPassword(password);
         clickOnLogin();

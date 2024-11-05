@@ -2,6 +2,8 @@ package base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -22,6 +24,7 @@ public class Base {
     public static WebDriver driver;
     public static JavascriptExecutor javascriptExecutor;
     public static WebDriverWait wait;
+    public static Logger logger;
 
     @Parameters({"browser", "url"})
     @BeforeMethod(alwaysRun = true)
@@ -33,7 +36,7 @@ public class Base {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         }
-
+        logger = LogManager.getLogger(this.getClass());
         driver.get(url);
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, 30);
@@ -48,7 +51,7 @@ public class Base {
         driver.quit();
     }
 
-    // selenium api
+    // selenium api (common api)
     public void clickOnElement(WebElement element) {
         element.click();
     }

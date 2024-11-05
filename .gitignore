@@ -5,6 +5,7 @@
 /out
 .idea
 /screen_shot
+/reports
 # Compiled class file
 *.class
 

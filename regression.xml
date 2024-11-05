@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="orangeHRM">
+    <listeners>
+        <listener class-name="listener.ExtendReport"></listener>
+        <listener class-name="listener.AnnotationsTransformer"></listener>
+    </listeners>
     <test name="functinal">
         <parameter name="browser" value="chrome"></parameter>
         <parameter name="url" value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"></parameter>
         <classes>
             <class name="system.TestLogin"/>
-            <class name="system.TestLogOut"></class>
+<!--            <class name="system.TestLogOut"></class>-->
 
 
         </classes>
