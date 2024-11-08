@@ -22,8 +22,8 @@ public class TestLogin extends Base {
 
     HomePage homePage;
 
-    String username = ExelData.getDataFromCell(path,"login",1,0);
-    String password = ExelData.getDataFromCell(path,"login",1,1);
+    String username = ExelData.getDataFromCell(path, "login", 1, 0);
+    String password = ExelData.getDataFromCell(path, "login", 1, 1);
 
 
     @Test
@@ -36,7 +36,7 @@ public class TestLogin extends Base {
         logger.info("enter password");
         homePage.enterPassword(password);
 //        Assert.assertTrue(true);
-      logger.info("click on login button");
+        logger.info("click on login button");
         homePage.clickOnLogin();
         Thread.sleep(1000);
         // assertion (validation)
