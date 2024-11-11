@@ -9,5 +9,6 @@ public class EmployerPage extends Base {
     public EmployerPage() {
         PageFactory.initElements(driver, this);
     }
-    //methods
+    //methods here
+
 }
