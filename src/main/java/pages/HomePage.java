@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class HomePage extends Base {
     // var web element
 
-
+    public static int i;
     @FindBy(name = "username") // locator
     WebElement inputUsername;
     @FindBy(name = "password")

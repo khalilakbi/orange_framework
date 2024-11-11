@@ -3,6 +3,7 @@ package system;
 import base.Base;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pages.HomePage;
 import utility.ExelData;
 
@@ -24,6 +25,7 @@ public class TestLogin extends Base {
 
     String username = ExelData.getDataFromCell(path, "login", 1, 0);
     String password = ExelData.getDataFromCell(path, "login", 1, 1);
+    String expectedURL = "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index";
 
 
     @Test
@@ -31,13 +33,20 @@ public class TestLogin extends Base {
         logger.info("start test case valid login");
         // steps
         homePage = new HomePage();
+
         logger.info("enter username");
         homePage.enterUserName(username);
+
         logger.info("enter password");
         homePage.enterPassword(password);
 //        Assert.assertTrue(true);
         logger.info("click on login button");
         homePage.clickOnLogin();
+
+//        SoftAssert softAssert = new SoftAssert();
+//        softAssert.assertEquals(driver.getCurrentUrl(),expectedURL);
+//        softAssert.assertAll();
+        Assert.assertEquals(driver.getCurrentUrl(),expectedURL);
 
     }
 

@@ -6,6 +6,7 @@
 .idea
 /screen_shot
 /reports
+/test-output
 # Compiled class file
 *.class
 

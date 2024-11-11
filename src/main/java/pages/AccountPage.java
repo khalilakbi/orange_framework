@@ -23,11 +23,8 @@ public class AccountPage extends Base {
     // actions methods (java)
 
     public void clickOnDropDownMenu() {
-
         clickOnElement(dropDownMenu);
     }
-
-
 
 
 }
